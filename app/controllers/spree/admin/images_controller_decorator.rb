@@ -30,7 +30,10 @@ Spree::Admin::ImagesController.class_eval do
   end
 
   def multi_upload
-
+    respond_to do |format|
+      format.js { render 'multi_upload.js' }
+      format.html { render 'multi_upload.html' }
+    end
   end
 
   def new_actions

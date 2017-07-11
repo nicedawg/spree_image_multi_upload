@@ -1,4 +1,6 @@
 $("#images").html('<%= escape_javascript(render :template => "spree/admin/images/multi_upload", :formats => [:html], :handlers => [:erb]) %>');
 
 // TODO: configure plugin: e. g. set appropriate preview sizes
-$('#multi_upload').fileupload();
+$('#multi_upload').fileupload({
+  redirect: '<%= admin_product_images_url(@product) %>'
+});
